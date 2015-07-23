@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1
+    p.show-title
+      b Title:
+      =theZine.title
+    p.show-url
+      b Background url
+      =theZine.url
+    p.show-textbox
+      b Background image has dark colors
+      =theZine.checkbox
+    p.show-excerpt
+      b Excerpt
+      =theZine.excerpt
+    p.show-body
+      b Body
+      =theZine.body
+  a(href='/zine/' + theZine._id + '/edit')
+  Edit Zine
+  p
+  br
+  form(action="/zine/" + theZine._id + "/delete" method="post")
+    input(type="submit" value="Delete Article")
+  p
+  br
+  a(href="/zine") <<< Go Back
+  

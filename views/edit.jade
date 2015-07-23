@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div.header(height="100" width="700")
+    img.treePic(src="../images/tree.jpeg" class="treePic")
+  h1.title The Zine
+  form(action="/zine/" + theZine._id + "/update", method="post")
+    div
+      p Title
+        textarea.titleOfArticle(type="textarea" name="title_name" rows="1" cols="100" value=theZine.title)
+    div
+      p Background URL
+        textarea.backgroundURL(type="textarea" name="url_background" rows="1" cols="100" value=theZine.url)
+    div
+      input.checkboxArea(type="checkbox" name="dark_colours" value=theZine.checked)
+      | Background image has dark colors
+    div
+      p Excerpt
+        textarea.excerptText(type="textarea" name="excerpt_text" rows="10" cols="100" value=theZine.excerpt)
+    div
+      p Body
+        textarea.bodyText(type="textarea" name="body_text" rows="10" cols="100" value=theZine.body)
+      p
+      div
+        input(type="submit" value="Update Article")
+      p
+      a(href="/zine") <<< Go Back

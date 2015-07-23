@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div.header(height="100" width="700")
+    img.treePic(src="../images/tree.jpeg" class="treePic")
+  h1.title The Zine
+  a(href="/zine/new") Create New Zine
+  for article in zineCollection
+    h2= article.title
+    p= article.body
+    p= article.excerpt
